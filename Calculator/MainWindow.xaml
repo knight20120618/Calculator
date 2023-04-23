@@ -8,11 +8,11 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBox x:Name="txtNumber" HorizontalAlignment="Center" Margin="0,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" Height="38" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" FontSize="22" Text="0"/>
-        <Button x:Name="btnClear" Content="AC" HorizontalAlignment="Left" Margin="117,123,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22"/>
+        <Button x:Name="btnClear" Content="AC" HorizontalAlignment="Left" Margin="117,123,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22" Click="btnClear_Click"/>
         <Button x:Name="btnSeven" Content="7" HorizontalAlignment="Left" Margin="225,123,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22" Click="btnSeven_Click"/>
         <Button x:Name="btnFour" Content="4" HorizontalAlignment="Left" Margin="225,196,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22" Click="btnFour_Click"/>
         <Button x:Name="btnOne" Content="1" HorizontalAlignment="Left" Margin="225,265,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22" Click="btnOne_Click"/>
-        <Button x:Name="btnDot" Content="." HorizontalAlignment="Left" Margin="225,339,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22"/>
+        <Button x:Name="btnDot" Content="." HorizontalAlignment="Left" Margin="225,339,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22" Click="btnDot_Click"/>
         <Button x:Name="btnEight" Content="8" HorizontalAlignment="Left" Margin="355,123,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22" Click="btnEight_Click"/>
         <Button x:Name="btnFive" Content="5" HorizontalAlignment="Left" Margin="355,196,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22" Click="btnFive_Click"/>
         <Button x:Name="btnTwo" Content="2" HorizontalAlignment="Left" Margin="355,265,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22" Click="btnTwo_Click"/>
