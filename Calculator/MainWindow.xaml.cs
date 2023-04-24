@@ -14,7 +14,7 @@ namespace Calculator
         }
 
         //firstNumber儲存第一個數字 | secondNumber儲存第二個數字
-        float firstNumber, secondNumber;
+        float firstNumber,secondNumber;
         int operators = -1;
 
         private void Add_Number(string _number)
@@ -117,6 +117,27 @@ namespace Calculator
             firstNumber = 0f;
             secondNumber = 0f;
             operators = -1;
+        }
+
+        private void btnRewind_Click(object sender, RoutedEventArgs e)
+        {
+            string txt = Convert.ToString(firstNumber);
+            if (txt.Length > 0)
+            {
+                txtNumber.Text = txt.Substring(0, txt.Length - 1);
+            }
+            else
+            {
+                txtNumber.Text = "0";
+            }
+        }
+
+        private void btnPercentage_Click(object sender, RoutedEventArgs e)
+        {
+            //將輸入文字框轉換成浮點數
+            firstNumber = Convert.ToSingle(txtNumber.Text);
+            firstNumber /= 100;
+            txtNumber.Text = string.Format("{0:P2}", firstNumber);
         }
 
         private void btnEqual_Click(object sender, RoutedEventArgs e)

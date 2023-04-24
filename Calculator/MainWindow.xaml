@@ -25,6 +25,8 @@
         <Button x:Name="btnPlus" Content="*" HorizontalAlignment="Left" Margin="619,196,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22" Click="btnPlus_Click"/>
         <Button x:Name="btnMinus" Content="-" HorizontalAlignment="Left" Margin="619,265,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22" Click="btnMinus_Click"/>
         <Button x:Name="btnAdd" Content="+" HorizontalAlignment="Left" Margin="619,339,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22" Click="btnAdd_Click"/>
+        <Button x:Name="btnPercentage" Content="%" HorizontalAlignment="Left" Margin="117,339,0,0" VerticalAlignment="Top" Height="45" Width="53" FontSize="22" Click="btnPercentage_Click"/>
+        <Button x:Name="btnRewind" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="117,196,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.764,1.284" FontSize="22" Width="53" Height="45" Click="btnRewind_Click"/>
 
     </Grid>
 </Window>
