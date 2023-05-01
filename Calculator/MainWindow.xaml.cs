@@ -13,8 +13,7 @@ namespace Calculator
             InitializeComponent();
         }
 
-        //firstNumber儲存第一個數字 | secondNumber儲存第二個數字
-        float firstNumber,secondNumber;
+        Calculate calculate = new Calculate(); // 建立計算機物件
         int operators = -1;
 
         private void Add_Number(string _number)
@@ -78,7 +77,7 @@ namespace Calculator
         private void Select_Operator(int _operator)
         {
             //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
-            firstNumber = Convert.ToSingle(txtNumber.Text);
+            calculate.firstNumber = Convert.ToSingle(txtNumber.Text);
             //重新將輸入文字框重新設定為0
             txtNumber.Text = "0";
             operators = _operator;
@@ -114,8 +113,7 @@ namespace Calculator
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             txtNumber.Text = "0";
-            firstNumber = 0f;
-            secondNumber = 0f;
+            calculate.Reset();
             operators = -1;
         }
 
@@ -134,9 +132,9 @@ namespace Calculator
         private void btnPercentage_Click(object sender, RoutedEventArgs e)
         {
             //將輸入文字框轉換成浮點數
-            firstNumber = Convert.ToSingle(txtNumber.Text);
-            firstNumber /= 100;
-            txtNumber.Text = string.Format("{0:P2}", firstNumber);
+            calculate.firstNumber = Convert.ToSingle(txtNumber.Text);
+            calculate.firstNumber /= 100;
+            txtNumber.Text = string.Format("{0:P2}", calculate.firstNumber);
         }
 
         private void btnEqual_Click(object sender, RoutedEventArgs e)
@@ -144,22 +142,26 @@ namespace Calculator
             //宣告最後計算結果變數
             float finalResults = 0f;
             //將輸入文字框轉換成浮點數，存入第二個數字的全域變數
-            secondNumber = Convert.ToSingle(txtNumber.Text);
+            calculate.secondNumber = Convert.ToSingle(txtNumber.Text);
 
             //依照四則運算符號的選擇，進行加減乘除
             switch (operators)
             {
+                //執行加法
                 case 0:
-                    finalResults = firstNumber + secondNumber;
+                    finalResults = calculate.Add();
                     break;
+                //執行減法
                 case 1:
-                    finalResults = firstNumber - secondNumber;
+                    finalResults = calculate.Subtract(); 
                     break;
+                //執行乘法
                 case 2:
-                    finalResults = firstNumber * secondNumber;
+                    finalResults = calculate.Multiply(); 
                     break;
+                //執行除法
                 case 3:
-                    finalResults = firstNumber / secondNumber;
+                    finalResults = calculate.Divide(); 
                     break;
             }
 
@@ -167,8 +169,7 @@ namespace Calculator
             txtNumber.Text = string.Format("{0:0.##########}", finalResults);
 
             //重置所有全域變數
-            firstNumber = 0f;
-            secondNumber = 0f;
+            calculate.Reset();
             operators = -1;
         }
     }
