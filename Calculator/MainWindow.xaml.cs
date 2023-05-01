@@ -107,7 +107,7 @@ namespace Calculator
         private void btnDot_Click(object sender, RoutedEventArgs e)
         {
             //確認輸入文字框中完全沒有小數點
-            if (txtNumber.Text.IndexOf(".") == -1)
+            if (txtNumber.Text.Contains(".") == false)
                 txtNumber.Text = txtNumber.Text + ".";
         }
 
