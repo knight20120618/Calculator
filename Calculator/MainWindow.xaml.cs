@@ -121,10 +121,9 @@ namespace Calculator
 
         private void btnRewind_Click(object sender, RoutedEventArgs e)
         {
-            string txt = Convert.ToString(firstNumber);
-            if (txt.Length > 0)
+            if (txtNumber.Text.Length > 1)
             {
-                txtNumber.Text = txt.Substring(0, txt.Length - 1);
+                txtNumber.Text = txtNumber.Text.Substring(0 , txtNumber.Text.Length-1);
             }
             else
             {
